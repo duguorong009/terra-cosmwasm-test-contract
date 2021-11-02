@@ -1,0 +1,1 @@
+3439ca49196391412b7b97898bff99aa9338ab1148f40819e57ad8f3684f1b9c  terra_cosmwasm_test_contract.wasm

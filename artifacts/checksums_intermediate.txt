@@ -1,0 +1,1 @@
+9ace22a7a063d1b9eb9e29fdbc6e3dabb7d610e38ac2df357078050438c4ee14  ./target/wasm32-unknown-unknown/release/terra_cosmwasm_test_contract.wasm

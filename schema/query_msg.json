@@ -1,15 +1,57 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "QueryMsg",
-  "anyOf": [
+  "oneOf": [
     {
       "type": "object",
       "required": [
-        "get_count"
+        "get_tax_rate"
       ],
       "properties": {
-        "get_count": {
+        "get_tax_rate": {
           "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "get_tax_cap"
+      ],
+      "properties": {
+        "get_tax_cap": {
+          "type": "object",
+          "required": [
+            "denom"
+          ],
+          "properties": {
+            "denom": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "get_calc_withdraw_amount"
+      ],
+      "properties": {
+        "get_calc_withdraw_amount": {
+          "type": "object",
+          "required": [
+            "uusd_amount"
+          ],
+          "properties": {
+            "uusd_amount": {
+              "type": "integer",
+              "format": "uint128",
+              "minimum": 0.0
+            }
+          }
         }
       },
       "additionalProperties": false
