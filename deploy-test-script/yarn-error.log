@@ -1,0 +1,44 @@
+Arguments: 
+  /home/honeybee/.nvm/versions/node/v14.17.4/bin/node /home/honeybee/.yarn/bin/yarn.js add @terra-money/terras.js
+
+PATH: 
+  /home/honeybee/.yarn/bin:/home/honeybee/.config/yarn/global/node_modules/.bin:/home/honeybee/.yarn/bin:/home/honeybee/.config/yarn/global/node_modules/.bin:/home/honeybee/.yarn/bin:/home/honeybee/.config/yarn/global/node_modules/.bin:/home/honeybee/.yarn/bin:/home/honeybee/.config/yarn/global/node_modules/.bin:/home/honeybee/.nvm/versions/node/v14.17.4/bin:/home/honeybee/.local/share/solana/install/active_release/bin:/usr/local/go/bin:/home/honeybee/.cargo/bin:/home/honeybee/.local/bin:/home/honeybee/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/bin:/home/honeybee/go/bin:/bin:/home/honeybee/go/bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  14.17.4
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@terra-money%2fterras.js: Not found
+      at Request.params.callback [as _callback] (/home/honeybee/.yarn/lib/cli.js:67031:18)
+      at Request.self.callback (/home/honeybee/.yarn/lib/cli.js:140885:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/home/honeybee/.yarn/lib/cli.js:141857:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/home/honeybee/.yarn/lib/cli.js:141779:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "deploy-test-script",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "ts-node ./src/index.ts"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
