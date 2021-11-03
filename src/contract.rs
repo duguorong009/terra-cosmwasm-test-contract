@@ -79,10 +79,14 @@ fn calc_withdraw_amount(deps: Deps, uusd_amount: Uint128) -> StdResult<CalcPossi
     let querier = TerraQuerier::new(&deps.querier);
     let tax_cap = querier.query_tax_cap("uusd")?;
     let tax_rate = querier.query_tax_rate()?;
-    let tax_amount = tax_cap.cap.min(uusd_amount.multiply_ratio(
-        Uint128::from(1_000_000_000_000_000_000u128),
-        Uint128::from(1_000_000_000_000_000_000u128).add(Uint128::from(tax_rate.rate.numerator())),
-    ));
+    let tax_amount = tax_cap.cap.min(
+        uusd_amount
+            - uusd_amount.multiply_ratio(
+                Uint128::from(1_000_000_000_000_000_000u128),
+                Uint128::from(1_000_000_000_000_000_000u128)
+                    .add(Uint128::from(tax_rate.rate.numerator())),
+            ),
+    );
     let possible_withdraw_amount = uusd_amount - tax_amount;
     Ok(CalcPossibleWithdrawAmount {
         possible_withdraw_amount: possible_withdraw_amount,
