@@ -9,8 +9,8 @@ export default {
   // gasPrice: 0.15,
   // gasAdjustment: 1.4,
 
-  contract_address: 'terra1ujqaxtnzved3qgu4ng7t87w9cevexuzj9tyh88',
+  contract_address: 'terra108gsp364k7tell6umqz44zdccrfe99r4n9jwfy', // code_id: 17270
 
-  wallet_address: 'terra17cz29kl6z5wj04ledes9jdmn6pgkelffjxglky',
-  wallet_seed: 'eye cushion water fruit carbon axis away little eager reflect toilet buzz interest spot gentle various ranch cheap honey feed size flavor always leisure',
+  wallet_address: 'terra...',
+  wallet_seed: '',
 }

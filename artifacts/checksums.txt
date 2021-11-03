@@ -1,1 +1,1 @@
-3439ca49196391412b7b97898bff99aa9338ab1148f40819e57ad8f3684f1b9c  terra_cosmwasm_test_contract.wasm
+4ffeafc13f16358065c020a965e633bb83af4584500976bc1f0d76ce6aa564e2  terra_cosmwasm_test_contract.wasm
