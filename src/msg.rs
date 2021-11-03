@@ -1,3 +1,4 @@
+use cosmwasm_std::Uint128;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -14,23 +15,23 @@ pub enum ExecuteMsg {}
 pub enum QueryMsg {
     GetTaxRate {},
     GetTaxCap { denom: String },
-    GetCalcWithdrawAmount { uusd_amount: u128 },
+    GetCalcWithdrawAmount { uusd_amount: Uint128 },
 }
 
 // We define a custom struct for each query response
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct TaxRateResponse {
-    pub tax_rate: u128,
-    pub denominator: u128,
+    pub tax_rate: Uint128,
+    pub denominator: Uint128,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct TaxCapResponse {
-    pub tax_cap: u128,
+    pub tax_cap: Uint128,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct CalcPossibleWithdrawAmount {
-    pub possible_withdraw_amount: u128,
-    pub tax_amount: u128,
+    pub possible_withdraw_amount: Uint128,
+    pub tax_amount: Uint128,
 }

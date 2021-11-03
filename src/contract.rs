@@ -62,7 +62,7 @@ fn query_tax_cap(deps: Deps, denom: String) -> StdResult<TaxCapResponse> {
     let querier = TerraQuerier::new(&deps.querier);
     let tax_cap = querier.query_tax_cap(denom)?;
     Ok(TaxCapResponse {
-        tax_cap: tax_cap.cap.u128(),
+        tax_cap: tax_cap.cap,
     })
 }
 
@@ -70,13 +70,12 @@ fn query_tax_rate(deps: Deps) -> StdResult<TaxRateResponse> {
     let querier = TerraQuerier::new(&deps.querier);
     let tax_rate = querier.query_tax_rate()?;
     Ok(TaxRateResponse {
-        tax_rate: tax_rate.rate.numerator(),
-        denominator: tax_rate.rate.denominator(),
+        tax_rate: Uint128::from(tax_rate.rate.numerator()),
+        denominator: Uint128::from(tax_rate.rate.denominator()),
     })
 }
 
-fn calc_withdraw_amount(deps: Deps, uusd_amount: u128) -> StdResult<CalcPossibleWithdrawAmount> {
-    let uusd_amount = Uint128::new(uusd_amount);
+fn calc_withdraw_amount(deps: Deps, uusd_amount: Uint128) -> StdResult<CalcPossibleWithdrawAmount> {
     let querier = TerraQuerier::new(&deps.querier);
     let tax_cap = querier.query_tax_cap("uusd")?;
     let tax_rate = querier.query_tax_rate()?;
@@ -86,8 +85,8 @@ fn calc_withdraw_amount(deps: Deps, uusd_amount: u128) -> StdResult<CalcPossible
     ));
     let possible_withdraw_amount = uusd_amount - tax_amount;
     Ok(CalcPossibleWithdrawAmount {
-        possible_withdraw_amount: possible_withdraw_amount.u128(),
-        tax_amount: tax_amount.u128(),
+        possible_withdraw_amount: possible_withdraw_amount,
+        tax_amount: tax_amount,
     })
 }
 
